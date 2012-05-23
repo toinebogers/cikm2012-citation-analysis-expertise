@@ -1,0 +1,270 @@
+\documentclass{sig-alternate}
+
+\textheight 676pt
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+
+\usepackage[%pdftex%
+bookmarks=true%
+,bookmarksnumbered=true%
+,hypertexnames=false%
+,breaklinks=true%
+,colorlinks=true%
+,linkcolor=blue%
+,citecolor=blue%
+,urlcolor=blue%
+%,linkbordercolor={0 0 1}%
+%,pdfborder={0 0 112.0}%
+]{hyperref}
+\hypersetup{
+%  pdfauthor = {Toine Bogers and Wei Lu and A B and Birger Larsen},
+  pdftitle = {Citation Analysis for Academic Expert Finding},
+  pdfsubject = {CIKM 2012},
+  pdfkeywords = {H.3 [Information Storage and Retrieval]},
+  pdfcreator = {LaTeX with hyperref package},
+  pdfproducer = {pdflatex}
+}
+
+\usepackage{url,graphicx}
+\usepackage{times}           % Uncomment if we want to use Times New Roman
+\usepackage[varg]{txfonts}   % Uncomment if we want to use Times New Roman
+\usepackage{tabularx,amsmath}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage[square,comma,numbers,sort&compress,sectionbib]{natbib}
+\usepackage{color,xcolor}
+%\usepackage[small,it]{caption}
+\definecolor{RoyalBlue}{rgb}{0.255,0.410,0.879}
+\definecolor{DarkGreen}{rgb}{0.0,0.5,0.0}
+\definecolor{Maroon}{rgb}{0.5,0.0,0.0}
+\definecolor{RoyalPurple}{rgb}{0.4,0.0,0.23}
+\definecolor{Burgundy}{rgb}{.647,.129,.149}
+\definecolor{FlickrBlue}{rgb}{0.25,0.60,0.93}
+\definecolor{FlickrPink}{rgb}{1.00,0.00,0.52}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\story}[1]{\textcolor{DarkGreen}{#1}}
+\newcommand{\shrink}{\vspace*{-.2\baselineskip}}
+\newcommand{\uptriangle}{$^{\vartriangle}$}
+\newcommand{\downtriangle}{$^{\triangledown}$}
+\newcommand{\upblack}{$^{\blacktriangle}$}
+\newcommand{\downblack}{$^{\blacktriangledown}$}
+\newcommand{\nosign}{\textcolor{white}{$^{\blacktriangledown}$}}
+\newcommand{\miniskip}{\vspace*{-.5\baselineskip}}
+\newcommand{\TA}{{\sc Topsy-All}}
+\newcommand{\TF}{{\sc Topsy-February}}
+\newcommand{\TS}{{\sc Topsy-133}}
+\newcommand{\hash}[1]{\textcolor{FlickrPink}{\#\textsf{#1}}}
+\newcommand{\tweet}[1]{\textcolor{FlickrBlue}{\textsf{#1}}}
+\newcommand{\AMBI}{\textcolor{Maroon}{\textsf{AMBI}}}
+\newcommand{\COMM}{\textcolor{Maroon}{\textsf{COMM}}}
+\newcommand{\LINK}{\textcolor{Maroon}{\textsf{LINK}}}
+\newcommand{\MISC}{\textcolor{Maroon}{\textsf{MISC}}}
+\newcommand{\NAME}{\textcolor{Maroon}{\textsf{NAME}}}
+\newcommand{\PERS}{\textcolor{Maroon}{\textsf{PERS}}}
+\newcommand{\REFL}{\textcolor{Maroon}{\textsf{REFL}}}
+
+
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{4pt}
+     \setlength{\topsep}{4pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{2em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishlisttwo}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\leftmargin}{2em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishend}{
+  \end{list}  }
+
+\newcommand{\squishenum}{
+ \begin{list}{}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{4pt}
+     \setlength{\topsep}{4pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.4em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+
+
+
+
+\begin{document}
+
+
+\title{Citation Analysis for Academic Expert Finding}
+%\numberofauthors{1}
+%\author{
+%\alignauthor
+%Toine Bogers and Lennart Bj\"{o}rneborn \\
+%\affaddr{Royal School of Library and Information Science}\\
+%\affaddr{Birketinget 6, 2300, Copenhagen, Denmark}\\
+%\email{\{tb,lb\}@iva.dk}
+%}
+
+\maketitle
+
+\begin{abstract}
+    \story{Bla bla bla}
+\end{abstract}
+
+
+% Update these later!
+%\category{H.3}{Information Storage and Retrieval}{H.3.1 Content Analysis and Indexing; H.3.3 Information Search and Retrieval; H.3.7 Digital Libraries} 
+%%H.1.2 [Information Systems]: User/Machine Systems Ð human factors, human information processing, software psychology; H.2.8 [Database applications]: Data mining; H.5.2: [Information Systems]: Information Interfaces and Presentation Ð User Interfaces; K.4 [Computers and Society]
+%\terms{Human Factors}
+\keywords{citation analysis, expert finding}
+
+
+
+% Start of paper content.
+\section{Introduction}
+\label{sec:introduction}
+
+\story{There is an increasing belief that enterprise search is a vital tool for meeting the demands of the global marketplace. {\em Expert search}\/ is considered a crucial component of an effective enterprise search system. A successful expert search system helps an organization address two important tasks, as signaled by Maybury \cite{Maybury:2006}: {\em expert finding}\/ and {\em expert profiling}. Expert finding is the task of locating individuals or communities knowledgeable about a specific topic. A complete and up-to-date overview of the experts related to a topic, task, or assignment can for instance aid an organization in rapidly recruiting an operational team to respond to a new market opportunity or threat. Expert finding involves analyzing communications, publications, and activities. It should also include the ability to rank them on multiple dimensions such as qualifications, availability, experience, and reputation.}
+
+\story{The term expert profiling, first coined by Balog et al.~\cite{Balog:2007}, encompasses all activities related to assessing expertise, such as classifying and quantifying individual expertise and the expertise of entire organizational units, and validating the breadth and depth of that expertise. A successful expert profiling system would also allow organizations to identify changes in expert profiles of individuals and organizational units \cite{Maybury:2006}}.
+
+\story{In general, three different sources of information for expertise attribution can be identified within organizations \cite{Maybury:2006}:}
+
+\story{\begin{itemize}
+\item Content-based evidence is one of the most prevalently used
+  sources of expertise in expert finding research, typically including
+  documents and e-mails authored by employees. Homepages, resumes, and
+  shared folders in a file system can also be used as content-based
+  evidence of expertise.
+\item Organizations are made up of a variety of social networks. We
+  assume that people who interact are likely to share expertise.
+  Evidence of these interactions can be found in the organization
+  structure, but also in e-mail flow, usage of software libraries, and
+  bibliographic information. Records of information exchange in these
+  networks provide evidence of expertise.
+\item A third type of evidence for expertise is activity-based: how
+  much time did an employee spend on a project, and what are the
+  search and publication histories of employees.
+\end{itemize}}
+
+\story{In this paper we focus on the problem of expert finding. In particular, we investigate the impact of combining two different sources of expertise---content-based and social networks---on expert finding in an average-sized academic workgroup. The research output of such a workgroup provides a stream of content-based evidence in the form of papers and technical reports. In addition, we can also benefit from the rigorous citation culture in academia. The network of citations between papers and authors is representative of the underlying social-academic network between researchers. We assume that highly cited papers are indicative of the expertise of its authors on the topics covered by those papers. We investigate the combination of this evidence with content-based methods. To our knowledge, citation analysis and content-based expert finding techniques have not yet been compared and combined; this is the contribution of the current paper.}
+
+%We ask the following research questions:
+%
+%\begin{itemize}
+%  \item \todo{Is citation analysis an effective technique for finding experts?}
+%  \item \todo{How can two different sources of expertise evidence---citations and content---best be combined for expert finding?}
+%\end{itemize}
+
+The remainder of this paper is organized as follows. \story{...}
+
+
+
+
+
+
+\section{Related work}
+\label{sec:related-work}
+
+\subsection{Expert finding}
+
+%\story{Briefly mention some old approaches and say that has happened in recent years to make these findings obsolete (should I be so dramatic as to say that?).}\\
+
+Early large-scale approaches to expert finding came in the form of constructing and querying databases containing representations of the knowledge and skills of an organization's workforce. These systems tended to delegate the responsibility and workload to the employees, giving them the task to create and maintain adequate descriptions of their own continuously changing skills \cite{Maybury:2006}.
+
+This disadvantage prompted a shift to expert finding techniques more supportive of the natural expertise location process \cite{McDonald:2000}, and more automatic approaches to expert finding such as the one by Campbell et al.~(2003). They performed expert finding on e-mail collections of two different organizations, comparing a content-based approach with a graph-based augmented approach and reporting that the latter outperformed the purely content-based approach \cite{Campbell:2003}.
+
+%\story{Then mention the TREC Enterprise track in more detail and mention some of the important findings there. Krisztian's SIGIR paper (\cite{Balog:2006}) and his IJCAI profiling paper (\cite{Balog:2007}). Also mention query expansion and relevance feedback attempts by the Glasgow group. Mention the different collections: W3C and CSIRO and Webwijs. Say that the collection used in these experiments is but a small subset of it. Later, after possible acceptance, add a reference to my old DIR/ECIR paper as a reference to where this ILK collection was first used.}\\
+
+Arguably, the key development boost for the field of expert finding and expert profiling has been the introduction of the Enterprise track in TREC 2005. From its inception the track included an Expert Finding task, that triggered rapid advances in the field of expertise retrieval, in terms of modeling, algorithms, and evaluation methods.
+
+Participants in the 2005 and 2006 TREC Enterprise tracks validated their work using the W3C test collection, a 2004 crawl of the World Wide Web Consortium
+website \cite{Craswell:2005}. This collection---330,037 documents, adding up to 5.7GB, with a list of 1,092 candidate experts---contains not only web pages but also numerous mailing lists, technical documents, and other kinds of data that represent the day-to-day operation of the W3C. For the Enterprise track of TREC 2007, a new test collection was used: the CSIRO collection with 370,715 documents, totaling 4.2 GB, with a list of 3,678 candidate experts \cite{Bailey:2007}. Other collections representing different types of organizations have been created, such as the UvT Expert Collection \cite{Balog:2007b}. The work described in this paper is performed on a small subset of this collection (see Section \ref{subsec:data} for more details).
+
+Expert finding---identifying a list of people who are knowledgeable about a given topic---is usually approached by uncovering salient associations between people and topics \cite{Craswell:2005}. The co-occurrence of a person with topics in the same context is commonly assumed to be evidence of expertise of that person on those topics. The majority of expert finding approaches can be divided into either {\em document-centric} or {\em candidate-centric} approaches. In the candidate-centric approach to expert finding, each expert is represented by a profile that is constructed from the expertise evidence associated with that expert. A simple way of doing this would be concatenating all documents associated with an expert into a single profile document for that expert. In a document-centric approach, the first step is retrieving documents or other forms of expertise evidence relevant for the query and then associating those retrieved documents with the different experts. Many different retrieval models have been used for both expert finding methods, as well as many extensions to existing retrieval models originally developed for common document retrieval, such as (pseudo-)relevance feedback, query expansion, using passage-level evidence, and re-ranking using static rankings \cite{Craswell:2005,Soboroff:2006}.
+
+%\story{If possible, mention approaches that use social aspects, maybe even citation analysis. Campbell (\cite{Campbell:2003}) for instance is an example of using social networks to find experts and expertise. Say that we wish to do something similar and highlight any differences there might be.}\\
+
+Approaches that combine different forms of evidence---such as using static rankings for re-ranking purposes---are especially interesting with regard to the topic of this paper. 
+%Because we focus on combining different kinds of evidence, it is particularly interesting to identify related work that uses some form of \todo{network analysis} in combination with a content-based expert finding approach. 
+To our knowledge, the first to do so were the aforementioned Campbell et al.~when they found that a graph-based approach performed better than a pure content-based approach \cite{Campbell:2003}. Chen et al.~(2006) took a similar approach while investigating social networks found in the mailing lists in the W3C corpus \cite{Chen:2006}. They used PageRank \cite{Page:1998} to rank experts on centrality, and a revised version of the HITS algorithm \cite{Kleinberg:1999} for submitting their runs. They compared this with a two-stage model that combined relevance with co-occurrence, and found that HITS performed significantly worse. They explain that the root cause for the lack of success is the specific nature of mailing list networks, which allow for reciprocal links to be added to the network much easier that the typical web link network, or citation network. Kolla et al.~(2006) used a similar HITS-based re-ranking approach and reported marginal but insignificant improvements \cite{Kolla:2006}. Bao et al.~(2006) achieved similar results by using PageRank \cite{Bao:2006}. In contrast, the approach taken by Zhu et al.~(2006) to use Google rankings turned out to be an ineffective way of improving performance \cite{Zhu:2006}. Serdyukov et al.~(2007) modeled the search for experts as a multi-step propagation of relevance through a hyperlinked network of relevant documents and found improvements over a one-step model \cite{Serdyukov:2007}. Outside of TREC, another effort to use network analysis for expert location was made by Zhang et al. (2007), who used a set of network-based ranking algorithms, including PageRank and HITS, to identify expert users of a Web-based programming community \cite{Zhang:2007}. They found these algorithms did not outperform simpler algorithms for expert finding.
+
+In sum, earlier work on static rankings does not seem to yield a satisfactory answer to the question whether using static ranking techniques such as HITS and PageRank helps or hurts expert finding performance. A possible reason might be that the networks that were analyzed---mailing lists and intranet pages---are not related (enough) to expertise; they may lack uniform and overt signs of the expertise of the individuals posting emails or adding web pages.
+
+A related research topic that shares many similarities with expert finding is automatically routing submitted papers to reviewers in conferences \cite{Biswas:2007,Dumais:1992,Ferilli:2006,Yarowsky:1999}. All of these approaches use the sets of papers written by the individual reviewers as content-based expertise evidence for those reviewers to match them to submitted papers. The most extensive work was done Yarowksy et al., who performed their experiments on the papers submitted to the ACL'99 conference \cite{Yarowsky:1999}. They compared both content-based and citation-based evidence for allocating reviewers and found that combining both types resulted in the best performance.
+
+
+
+
+
+\subsection{Citation analysis}
+\label{subsec:citation}
+
+%\story{Mention the history of the field and why citation analysis was used: to judge research performance. Mention the link between citations and expertise and try to find any supporting references for this. Say that much of the work on these citation graphs in bibliometrics/scientometrics is done on a visualization/exploratory basis, but that some more computer science-ey approaches have been taken. For instance, by that group that used PageRank as a node importance measure.}\\
+
+%Because the \todo{type of} social network \todo{that} we wish to use in improving expert finding is a network of research papers that are interlinked via citations, it is prudent to look at the related work in the field of citation analysis. 
+Citation analysis involves assessing the research performance of individual scholars, scholarly journals, and research groups, departments, and institutions. Analyzing bibliographic networks has a rich history: the first citation indexes were developed by Eugene Garfield in the 1950s. Garfield (1979) also pioneered the use of these indexes in assessing the popularity and impact of specific articles, authors, and publications \cite{Garfield:1979}.%\cite{Garfield:1955,Garfield:1979}.
+
+As mentioned in the previous section, we assume the degree to which a paper (or a set of papers about a topic) is cited, to be a good indicator of expertise. We are therefore interested in bibliometric indicators that help to identify the important elements in a citation network, more specifically, well-cited papers and authors. The classic example of such a bibliometric indicator is the so-called {\em impact factor}. Pioneered by Garfield's Institute for Scientific Information in the 1960s, the impact factor was meant to be an objective measure of the reputability of a journal \cite{Garfield:1979}.%\cite{Garfield:1955}. 
+It is defined as the average number of citations---or average {\em indegree}---per article a journal receives over a two-year period. 
+
+The original impact factor formulation does not distinguish between citations: citations from journals with a high impact have the same weight as citations from low impact journals. Pinski et al.~(1976) were the first to suggest a recursive impact factor to remedy this \cite{Pinski:1976}, with several others proposing related approaches, such as Bollen et al.~(2006) who proposed using the PageRank algorithm \cite{Bollen:2006,Page:1998}. Examples of journal rankings using the PageRank algorithm can be found, for instance, on the Eigenfactor.org website\footnote{http://www.eigenfactor.org/}.
+
+In our expert finding situation we focus on a single workgroup. We therefore only cover a subset of the citation network of the workgroup's research field. We do not have the impact factors for every journal and conference proceedings. Lacking these for now, we use the indegree count for each document and author to calculate the importance of authors and documents in the network. In addition, we wish to use PageRank as a way of calculating a recursive impact factor.
+
+Garfield, among others, has warned against using impact factors to measure the productivity of individual scientists, arguing that different scholarly disciplines can have very different publication and citation practices and that there is ``wide variation from article to article within a single journal'' \cite{Garfield:1998}. However, we believe that the homogeneous research focus of our evaluated workgroup alleviates this problem to some extent. Furthermore, using a recursive algorithm for calculating the impact factor---such as PageRank---can also help alleviate this. We therefore decided to use these two bibliometric indicators  to determine the importance of documents and authors: standard citation indegree, and PageRank scores.
+
+Another measure that has been proposed as a way of estimating an individual researcher's impact is the so-called {\em Hirsch number}\/ (or $h$-index) \cite{Hirsch:2005}. A scholar has a Hirsch number of $h$ if he has published $h$ papers that have been cited $h$ times or more. We could not test this measure as an expertise estimator because it is better at distinguishing between scientists within an entire field than within a workgroup; we do not have access to the full network of the research fields. %According to Hirsch (2005), a ``a scientist has index $h$ if $h$ of his $Np$ papers have at least $h$ citations each, and the other $(Np - h)$ papers have at most $h$ citations each.''\\
+
+%\story{Also mention IR approaches that use citation analysis to improve document rankings such as Strohman's approach (\cite{Strohman:2007}) and possible others. Spell out the difference between their and our approach by saying we do it for expert finding, not document finding.}\\
+
+There is some related work at the intersection of information retrieval and citation analysis. One of the first investigations into the usefulness of citations for document retrieval was performed by Salton (1963), who found a significant correlation between text-based document similarity and citation overlap similarity between documents \cite{Salton:1963}. Another obvious related example is the PageRank algorithm for ranking web pages, developed by Page et al.~(1998), inspired by ideas from citation analysis. It has been successfully used to improve Web retrieval performance, for instance, by producing document priors or re-ranking retrieval results \cite{Page:1998}. Some specific search engines for scholarly literature have been developed, most notably Google Scholar \cite{Jacso:2005} and CiteSeer \cite{Giles:1998}. In general, such specific search engines perform `normal' document retrieval, re-ranking the results by indegree (citation) count.
+
+Drawing from the principle of polyrepresentation, Larsen combined text-based retrieval techniques with citation analysis, but found no significant improvements over a bag-of-words baseline \cite{Larsen:2004}. More recently, Strohman et al.~(2007) tested many seemingly useful measures descriptive of the citation network, but found that only combining text-based retrieval with the graph-based Katz measure significantly improved performance \cite{Strohman:2007}. Finally, Fujii (2007) also combined text-based patent retrieval with the PageRank probabilities of citations between patents and found small but significant improvements in recall \cite{Fujii:2007}. Overall, there seems to be a tendency for citation analysis to yield small improvements over normal text-based retrieval approaches.
+
+
+
+
+
+\section{Methodology}
+\label{sec:methodology}
+
+\story{Bla bla bla}
+
+
+
+
+
+\section{Discussion \& conclusions}
+\label{sec:discussion-conclusions}
+
+\story{Bla bla bla}
+
+
+
+
+
+%\section{Acknowledgements}
+%We thank everyone!
+
+
+
+
+% References (Around 1.5 col)
+\renewcommand{\bibsection}{\section{References}}
+\providecommand{\bibfont}{\small}
+\setlength{\bibsep}{0pt}
+\bibliographystyle{abbrvnat}
+\bibliography{references}
+
+\end{document}
